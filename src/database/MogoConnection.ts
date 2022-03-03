@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { config } from '../config/Constants'
+import { config } from '../config/Constants';
 
 export class MongoConnection {
   public async connect(): Promise<void> {

@@ -1,14 +1,15 @@
-import { prop, Typegoose } from '@hasezoey/typegoose'
+import { prop, getModelForClass } from '@typegoose/typegoose';
 
-export class URL extends Typegoose {
+class URL {
   @prop({ required: true })
-  hash: string
-
-  @prop({ required: true })
-  originURL: string
+  hash: string;
 
   @prop({ required: true })
-  shortURL: string
+  originURL: string;
+
+  @prop({ required: true })
+  shortURL: string;
 }
 
-export const URLModel = new URL().getModelForClass(URL);
+export const URLModel = getModelForClass(URL);
+
