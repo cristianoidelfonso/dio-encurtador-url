@@ -1,8 +1,12 @@
 import { URLController } from './controller/URLController';
 import express, { NextFunction, Request, Response } from 'express';
+import { MongoConnection } from './database/MogoConnection';
 
 const api = express();
 api.use(express.json());
+
+const database = new MongoConnection();
+database.connect();
 
 api.get('/teste', (reques: Request, response: Response, next: NextFunction) => {
   response.json({'success get': true})
